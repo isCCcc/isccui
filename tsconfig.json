@@ -1,0 +1,5 @@
+{
+    "compilerOptions": {
+        "strict": false // 关闭严格模式
+    }
+}
