@@ -336,6 +336,11 @@
     "@vue/compiler-dom" "3.2.37"
     "@vue/shared" "3.2.37"
 
+"@vue/devtools-api@^6.1.4":
+  version "6.1.4"
+  resolved "https://registry.npmmirror.com/@vue/devtools-api/-/devtools-api-6.1.4.tgz#b4aec2f4b4599e11ba774a50c67fa378c9824e53"
+  integrity sha512-IiA0SvDrJEgXvVxjNkHPFfDx6SXw0b/TUkqMcDZWNg9fnCAHbTpoo59YfJ9QLFkwa3raau5vSlRVzMSLDnfdtQ==
+
 "@vue/reactivity-transform@3.2.37":
   version "3.2.37"
   resolved "https://registry.npmmirror.com/@vue/reactivity-transform/-/reactivity-transform-3.2.37.tgz#0caa47c4344df4ae59f5a05dde2a8758829f8eca"
@@ -1878,6 +1883,13 @@ vite@^1.0.0-rc.1:
     source-map "^0.7.3"
     vue "^3.0.3"
     ws "^7.3.1"
+
+vue-router@4.1.0-c113369:
+  version "4.1.0-c113369"
+  resolved "https://registry.npmmirror.com/vue-router/-/vue-router-4.1.0-c113369.tgz#f1c71ef88e0165bb81ca1a30d5cf1ab7a6603ab3"
+  integrity sha512-IC8AKw8FDiT4ZpAcoCAFm493n9IcPvP1lBekTMju0QiR9AFNJU6l5sceh8gEHK5tHDAbJk9AVJM8Ocijf9tp8A==
+  dependencies:
+    "@vue/devtools-api" "^6.1.4"
 
 vue@^3.0.0-rc.1, vue@^3.0.3:
   version "3.2.37"
