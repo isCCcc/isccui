@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
-        "strict": false // 关闭严格模式
+        "strict": false, // 关闭严格模式
+        "jsx": "preserve",
     }
 }
