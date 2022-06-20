@@ -5,6 +5,7 @@ import Switch from './components/Switch.vue'
 import Button from './components/Button.vue'
 import Dialog from './components/Dialog.vue'
 import Tabs from './components/Tabs.vue'
+import DocFile from './components/DocFile.vue'
 
 const history = createWebHashHistory()
 export const router = createRouter({
@@ -13,6 +14,7 @@ export const router = createRouter({
         { path: '/', component: Home },
         {
             path: '/doc', component: Doc, children: [
+                { path: '', component: DocFile },
                 { path: 'switch', component: Switch },
                 { path: 'button', component: Button },
                 { path: 'dialog', component: Dialog },
