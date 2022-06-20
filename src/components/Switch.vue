@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Switch v-model:checked="checked" />
+        <Switch v-model:checked="bool" />
         <!-- <Switch :checked="checked" @update:checked="checked = $event" /> -->
     </div>
 </template>
@@ -11,8 +11,8 @@ import Switch from "../lib/Switch.vue";
 export default {
     components: { Switch },
     setup() {
-        const checked = ref(false);
-        return { checked }
+        const bool = ref(false);
+        return { bool }
     }
 }
 </script>
