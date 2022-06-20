@@ -26,10 +26,13 @@ export default {
 
 <style lang="scss" scoped>
 .topnav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     background-color: pink;
     display: flex;
     padding: 16px;
-    position: relative;
     z-index: 10;
     justify-content: center;
     align-items: center;
@@ -41,15 +44,18 @@ export default {
 
     >.menu {
         display: flex;
+        // ??????
+        flex-direction: row;
         white-space: nowrap;
         flex-wrap: nowrap;
 
         >li {
-            margin: 0 1em;
+            margin: 10px 1em;
         }
     }
 
     >.toggleAside {
+        display: none;
         width: 24px;
         height: 24px;
         background: red;
