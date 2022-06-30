@@ -2,7 +2,7 @@
     <div>Dialog示例</div>
     <h1>示例1</h1>
     <Button @click="toggle">toggle</Button>
-    <Dialog :visible="x"></Dialog>
+    <Dialog v-model:visible="x" :ok="fn1" :cancel="fn2"></Dialog>
 </template>
 
 <script lang="ts">
@@ -13,10 +13,20 @@ export default {
     components: { Dialog, Button },
     setup(props) {
         const x = ref(false);
+        // 切换对话框
         const toggle = () => {
             x.value = !x.value;
         }
-        return { x, toggle }
+        // 对ok按钮进行校验
+        const fn1 = () => {
+            // ......
+            return true;
+        }
+        // 对cancel按钮进行校验
+        const fn2 = () => {
+            return true;
+        }
+        return { x, toggle, fn1, fn2 }
     }
 }
 </script>

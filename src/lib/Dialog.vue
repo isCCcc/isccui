@@ -1,6 +1,6 @@
 <template>
     <template v-if="visible">
-        <div class="blanche-dialog-overlay"></div>
+        <div class="blanche-dialog-overlay" @click="onClickOverlay"></div>
         <div class="blanche-dialog-wrapper">
             <div class="blanche-dialog">
                 <span class="blanche-dialog-close" @click="close"></span>
@@ -14,8 +14,8 @@
                 </main>
                 <hr>
                 <footer>
-                    <Button class="ok">OK</Button>
-                    <Button class="cancel">Cancel</Button>
+                    <Button class="ok" @click="ok">OK</Button>
+                    <Button class="cancel" @click="cancel">Cancel</Button>
                 </footer>
             </div>
         </div>
@@ -30,14 +30,36 @@ export default {
         visible: {
             type: Boolean,
             default: false
-        }
+        },
+        closeOnClickOverlay: {
+            type: Boolean,
+            default: true
+        },
+        ok: {
+            type: Function
+        },
+        cancel: {
+            type: Function
+        },
     },
-    // setup() {
-    //     const warBtn = () => {
-
-    //     }
-    //     return { warBtn }
-    // }
+    setup(props, context) {
+        const close = () => {
+            context.emit('update:visible', !props.visible);
+        }
+        const onClickOverlay = () => {
+            if (props.closeOnClickOverlay) { close(); }
+        }
+        const ok = () => {
+            if (props.ok?.() !== false) { close(); }
+        }
+        const cancel = () => {
+            context.emit('cancel');
+            close();
+        }
+        return {
+            close, onClickOverlay, ok, cancel
+        }
+    }
 
 }
 </script>
