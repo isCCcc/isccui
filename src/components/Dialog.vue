@@ -3,8 +3,13 @@
     <h1>示例1</h1>
     <Button @click="toggle">toggle</Button>
     <Dialog v-model:visible="x" :ok="fn1" :cancel="fn2">
-        <div>内容一</div>
-        <div>内容二</div>
+        <template v-slot:title>
+            <strong>加粗的标题</strong>
+        </template>
+        <template v-slot:content>
+            <div>内容一</div>
+            <div>内容二</div>
+        </template>
     </Dialog>
 </template>
 
@@ -14,7 +19,7 @@ import Button from '../lib/Button.vue';
 import { ref } from 'vue';
 export default {
     components: { Dialog, Button },
-    setup(props) {
+    setup() {
         const x = ref(false);
         // 切换对话框
         const toggle = () => {

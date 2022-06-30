@@ -5,10 +5,10 @@
             <div class="blanche-dialog">
                 <span class="blanche-dialog-close" @click="close"></span>
                 <header>
-                    <h1>{{ title }}</h1>
+                    <slot name="title" />
                 </header>
                 <main>
-                    <slot />
+                    <slot name="content" />
                 </main>
                 <footer>
                     <Button class="ok" @click="ok">OK</Button>
@@ -24,10 +24,6 @@ import Button from './Button.vue'
 export default {
     components: { Button },
     props: {
-        title: {
-            type: String,
-            default: "提示"
-        },
         visible: {
             type: Boolean,
             default: false
