@@ -2,7 +2,10 @@
     <div>Dialog示例</div>
     <h1>示例1</h1>
     <Button @click="toggle">toggle</Button>
-    <Dialog v-model:visible="x" :ok="fn1" :cancel="fn2"></Dialog>
+    <Dialog v-model:visible="x" :ok="fn1" :cancel="fn2">
+        <div>内容一</div>
+        <div>内容二</div>
+    </Dialog>
 </template>
 
 <script lang="ts">

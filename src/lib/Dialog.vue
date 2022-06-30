@@ -5,14 +5,11 @@
             <div class="blanche-dialog">
                 <span class="blanche-dialog-close" @click="close"></span>
                 <header>
-                    <h1>标题</h1>
+                    <h1>{{ title }}</h1>
                 </header>
-                <hr>
                 <main>
-                    <p>第一行字</p>
-                    <p>第二行字</p>
+                    <slot />
                 </main>
-                <hr>
                 <footer>
                     <Button class="ok" @click="ok">OK</Button>
                     <Button class="cancel" @click="cancel">Cancel</Button>
@@ -27,6 +24,10 @@ import Button from './Button.vue'
 export default {
     components: { Button },
     props: {
+        title: {
+            type: String,
+            default: "提示"
+        },
         visible: {
             type: Boolean,
             default: false
