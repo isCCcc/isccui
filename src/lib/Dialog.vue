@@ -1,28 +1,44 @@
 <template>
-    <div class="blanche-dialog-overlay"></div>
-    <div class="blanche-dialog-wrapper">
-        <div class="blanche-dialog">
-            <header>
-                <h1>标题</h1>
-            </header>
-            <hr>
-            <main>
-                <p>第一行字</p>
-                <p>第二行字</p>
-            </main>
-            <hr>
-            <footer>
-                <Button>OK</Button>
-                <Button>Cancel</Button>
-            </footer>
+    <template v-if="visible">
+        <div class="blanche-dialog-overlay"></div>
+        <div class="blanche-dialog-wrapper">
+            <div class="blanche-dialog">
+                <span class="blanche-dialog-close" @click="close"></span>
+                <header>
+                    <h1>标题</h1>
+                </header>
+                <hr>
+                <main>
+                    <p>第一行字</p>
+                    <p>第二行字</p>
+                </main>
+                <hr>
+                <footer>
+                    <Button class="ok">OK</Button>
+                    <Button class="cancel">Cancel</Button>
+                </footer>
+            </div>
         </div>
-    </div>
+    </template>
 </template>
 
 <script lang="ts">
 import Button from './Button.vue'
 export default {
     components: { Button },
+    props: {
+        visible: {
+            type: Boolean,
+            default: false
+        }
+    },
+    // setup() {
+    //     const warBtn = () => {
+
+    //     }
+    //     return { warBtn }
+    // }
+
 }
 </script>
 
@@ -44,7 +60,7 @@ $border-color: #d9d9d9;
         left: 0;
         width: 100%;
         height: 100%;
-        background: fade_out(#ddd, 0.3);
+        background: fade_out(#333, 0.3);
         z-index: 10;
     }
 
@@ -78,8 +94,63 @@ $border-color: #d9d9d9;
         border-top: 1px solid $border-color;
         padding: 12px 16px;
         text-align: right;
+
+        >.ok:hover,
+        .ok:focus {
+            animation: none;
+            color: #fff;
+            border: none;
+            background-color: #1976d2;
+        }
+
+        >.cancel:hover,
+        .cancel:focus {
+            animation: none;
+            color: #fff;
+            border: none;
+            background-color: #ffc107;
+        }
     }
 
+    &-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        border-radius: 32px;
+        cursor: pointer;
 
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            height: 1px;
+            width: 50%;
+            top: 50%;
+            left: 50%;
+            background: black;
+        }
+
+        &::before {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+        &::after {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        @media (min-width: 500px) {
+            &:hover {
+                background-color: #f57272;
+
+                &::before,
+                &::after {
+                    background-color: #fff;
+                }
+            }
+        }
+    }
 }
 </style>
