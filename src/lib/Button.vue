@@ -79,6 +79,8 @@ $grey: #909399;
 
     @media (min-width: 500px) {
         &:hover {
+            color: $blue;
+            border-color: $blue;
             animation: button-hover 0.5s linear forwards;
 
             &[disabled] {
