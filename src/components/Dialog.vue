@@ -11,12 +11,15 @@
             <div>内容二</div>
         </template>
     </Dialog>
+    <h1>示例2</h1>
+    <Button @click="showDialog">一键开启</Button>
 </template>
 
 <script lang="ts">
 import Dialog from '../lib/Dialog.vue';
 import Button from '../lib/Button.vue';
 import { ref } from 'vue';
+import { openDialog } from '../lib/openDialog'
 export default {
     components: { Dialog, Button },
     setup() {
@@ -34,7 +37,20 @@ export default {
         const fn2 = () => {
             return true;
         }
-        return { x, toggle, fn1, fn2 }
+        // 一句话打开Dialog
+        const showDialog = () => {
+            openDialog({
+                title: '标题',
+                content: '你好呀！',
+                ok() {
+                    // 返回值不为 false 即可往下走，具体逻辑可移步至 lib/Dialog 设置
+                },
+                cancel() {
+                    // 点击即可往下走，具体逻辑可移步至 lib/Dialog 设置
+                }
+            });
+        }
+        return { x, toggle, fn1, fn2, showDialog }
     }
 }
 </script>
