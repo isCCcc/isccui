@@ -12,8 +12,7 @@
 </template>
 
 <script lang="ts">
-import { on } from 'events';
-import { computed, ref, onMounted, watchEffect, onUpdated } from 'vue';
+import { computed, ref, onMounted, watchEffect } from 'vue';
 import Tab from './Tab.vue';
 export default {
     props: {
@@ -28,7 +27,6 @@ export default {
                 const { width, left: resLeft } = selectedItem.value.getBoundingClientRect()
                 const { left: conLeft } = container.value.getBoundingClientRect();
                 const left = resLeft - conLeft;
-                console.log(selectedItem.value.getClientRects())
                 indicator.value.style.width = width + 'px'; // 动态设置导航栏的宽度
                 indicator.value.style.left = left + 'px';   // 动态设置导航栏的位置
             });
