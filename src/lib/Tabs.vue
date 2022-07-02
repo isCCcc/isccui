@@ -1,30 +1,59 @@
 <template>
     <div class="blanche-tabs">
-        <div class="blanche-tabs-nav">
-            <div class="blanche-tabs-nav-item selected" v-for="(t, index) in titles" :key="index">{{ t }}</div>
+        <div class="blanche-tabs-nav" ref="container">
+            <div class="blanche-tabs-nav-item" :class="{ selected: t === selected }" v-for="(t, index) in titles"
+                :key="index" :ref="el => { if (t === selected) selectedItem = el }" @click="select(t)">{{ t }}</div>
+            <div class="blanche-tabs-nav-indicator" ref="indicator"></div>
         </div>
         <div class="blanche-tabs-content">
-            <component class="blanche-tabs-content-item" v-for="(c, index) in defaults" :key="index" :is="c">
-            </component>
+            <component class="blanche-tabs-content-item" :key="current.props.title" :is="current" />
         </div>
     </div>
 </template>
 
 <script lang="ts">
-import Tab from './Tab.vue'
+import { on } from 'events';
+import { computed, ref, onMounted, watchEffect, onUpdated } from 'vue';
+import Tab from './Tab.vue';
 export default {
+    props: {
+        selected: { type: String }
+    },
     setup(props, context) {
+        const selectedItem = ref<HTMLDivElement>(null);
+        const indicator = ref<HTMLDivElement>(null);
+        const container = ref<HTMLDivElement>(null);
+        onMounted(() => {
+            watchEffect(() => {
+                const { width, left: resLeft } = selectedItem.value.getBoundingClientRect()
+                const { left: conLeft } = container.value.getBoundingClientRect();
+                const left = resLeft - conLeft;
+                console.log(selectedItem.value.getClientRects())
+                indicator.value.style.width = width + 'px'; // 动态设置导航栏的宽度
+                indicator.value.style.left = left + 'px';   // 动态设置导航栏的位置
+            });
+        });
         const defaults = context.slots.default();
         defaults.forEach((tag) => {
             if (tag.type !== Tab) {
-                throw new Error("Tabs 的子标签必须是 Tab")
+                throw new Error("Tabs 的子标签必须是 Tab");
             }
-        })
+        });
         const titles = defaults.map((tag) => {
-            return tag.props.title
+            return tag.props.title;
+        });
+        // 返回的是defaults的一个子元素，即tab标签
+        const current = computed(() => {
+            return defaults.filter((tag) => {
+                return tag.props.title === props.selected;
+            })[0];
         })
-        console.log(titles)
-        return { defaults, titles };
+        const select = (title: String) => {
+            context.emit('update:selected', title);
+        }
+        return {
+            defaults, titles, current, select, selectedItem, indicator, container,
+        };
     },
 }
 </script>
