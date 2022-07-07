@@ -3,6 +3,18 @@
         <Topnav class="nav" :toggleAsideVisible="true" />
         <div class="content">
             <aside v-if="asideVisible">
+                <h2>文档</h2>
+                <ol>
+                    <li>
+                        <router-link to="/doc/intro">介绍</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/doc/install">安装</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/doc/get-started">开始使用</router-link>
+                    </li>
+                </ol>
                 <h2>组件列表</h2>
                 <ol>
                     <li>
@@ -78,7 +90,7 @@ export default {
 aside {
     background: lightblue;
     width: 150px;
-    padding: 16px;
+    padding: 16px 0;
     position: fixed;
     top: 0;
     left: 0;
@@ -87,11 +99,21 @@ aside {
 
     >h2 {
         margin-bottom: 4px;
+        padding-left: 8px;
     }
 
     >ol {
         >li {
-            padding: 4px 0;
+            >a {
+                padding: 4px 16px;
+                display: block;
+            }
+
+            .router-link-active {
+                background-color: #fff;
+                // text-decoration: underline;
+            }
+
         }
     }
 }
