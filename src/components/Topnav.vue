@@ -1,17 +1,31 @@
 <template>
     <div class="topnav">
-        <div class="logo">LOGO</div>
+        <router-link to="/" class="logo">
+            <svg class="icon">
+                <use xlink:href="#icon-shanzhu"></use>
+            </svg>
+        </router-link>
         <ul class="menu">
-            <li>菜单1</li>
-            <li>菜单2</li>
+            <li>
+                <router-link to="/doc">文档</router-link>
+            </li>
         </ul>
-        <span class="toggleAside" @click="toggleMenu"></span>
+        <span v-if="toggleAsideVisible" class="toggleAside" @click="toggleMenu">
+            <svg class="icon">
+                <use xlink:href="#icon-menu"></use>
+            </svg>
+        </span>
     </div>
 </template>
 
 <script lang="ts">
 import { inject, Ref } from 'vue'
 export default {
+    props: {
+        toggleAsideVisible: {
+            type: Boolean
+        }
+    },
     setup() {
         const asideVisible = inject<Ref<boolean>>('asideVisible') // get
 
@@ -25,32 +39,48 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$color: #007974;
+
 .topnav {
+    color: $color;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: pink;
     display: flex;
     padding: 16px;
-    z-index: 10;
+    z-index: 20;
     justify-content: center;
     align-items: center;
 
     >.logo {
         max-width: 6em;
         margin-right: auto;
+
+        >svg {
+            width: 32px;
+            height: 32px;
+        }
     }
 
     >.menu {
         display: flex;
-        // ??????
         flex-direction: row;
         white-space: nowrap;
         flex-wrap: nowrap;
 
         >li {
             margin: 10px 1em;
+
+            >a {
+                text-decoration: none;
+                color: $color;
+
+                &:hover {
+                    border-bottom: none;
+                    font-weight: bolder;
+                }
+            }
         }
     }
 
@@ -58,12 +88,16 @@ export default {
         display: none;
         width: 24px;
         height: 24px;
-        background: red;
+        // background: red;
         position: absolute;
         left: 16px;
         top: 50%;
         transform: translateY(-50%);
-        display: none;
+
+        >svg {
+            width: 22px;
+            height: 22px;
+        }
     }
 
     @media (max-width:500px) {
