@@ -10,8 +10,7 @@
                 <Button>查看代码</Button>
             </div>
             <div class="demo-code code-show">
-                <!-- {{ SwitchNormal.__sourceCode }} -->
-                <pre v-text="SwitchNormal.__sourceCode"></pre>
+                <pre v-html="Prism.highlight(SwitchNormal.__sourceCode, Prism.languages.html, 'html')"></pre>
             </div>
         </div>
         <div class="demo">
@@ -23,7 +22,7 @@
                 <Button>查看代码</Button>
             </div>
             <div class="demo-code">
-                <pre v-text="SwitchDisabled.__sourceCode"></pre>
+                <pre v-html="Prism.highlight(SwitchDisabled.__sourceCode, Prism.languages.html, 'html')"></pre>
             </div>
         </div>
     </div>
@@ -34,12 +33,14 @@ import { ref } from 'vue';
 import SwitchNormal from "./SwitchDemo/SwitchNormal.vue";
 import SwitchDisabled from "./SwitchDemo/SwitchDisabled.vue";
 import Button from "../../lib/Button.vue";
-console.log(SwitchNormal)
+import Prism from 'prismjs'
+import 'prismjs/themes/prism.css'
+
 export default {
     components: { Button },
     setup() {
         const bool = ref(false);
-        return { bool, SwitchNormal, SwitchDisabled }
+        return { bool, SwitchNormal, SwitchDisabled, Prism }
     }
 }
 </script>
