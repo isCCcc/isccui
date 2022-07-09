@@ -88,7 +88,8 @@ export default {
 }
 
 aside {
-    background: lightblue;
+    // background: #02bcb0;
+    background: linear-gradient(145deg, #dcfcfb, #bbebe8);
     width: 150px;
     padding: 16px 0;
     position: fixed;
