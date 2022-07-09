@@ -19,6 +19,7 @@ export default {
             return `export default function (Component) {
         Component.__sourceCode = ${JSON.stringify(main)}
         Component.__sourceCodeTitle = ${JSON.stringify(title)}
+        Component.__parsed = ${JSON.stringify(parsed)}
       }`.trim();
         },
     },
