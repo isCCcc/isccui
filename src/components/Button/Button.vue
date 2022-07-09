@@ -28,15 +28,14 @@
 </template>
 
 <script lang="ts">
-import Button from '../../lib/Button.vue'
 import Demo from '../Demo.vue'
-import ButtonSize from './ButtonDemo/ButtonSize.vue'
-import ButtonShape from './ButtonDemo/ButtonShape.vue'
-import ButtonBase from './ButtonDemo/ButtonBase.vue'
-import ButtonLoading from './ButtonDemo/ButtonLoading.vue'
-import ButtonDisabled from './ButtonDemo/ButtonDisabled.vue'
+import ButtonSize from './ButtonModules/ButtonSize.vue'
+import ButtonShape from './ButtonModules/ButtonShape.vue'
+import ButtonBase from './ButtonModules/ButtonBase.vue'
+import ButtonLoading from './ButtonModules/ButtonLoading.vue'
+import ButtonDisabled from './ButtonModules/ButtonDisabled.vue'
 export default {
-    components: { Button, Demo },
+    components: { Demo },
     setup() {
         return { ButtonSize, ButtonShape, ButtonBase, ButtonDisabled, ButtonLoading }
     }

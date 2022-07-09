@@ -16,8 +16,8 @@
 
 <script lang="ts">
 import Demo from '../Demo.vue'
-import SwitchNormal from './SwitchDemo/SwitchNormal.vue'
-import SwitchDisabled from './SwitchDemo/SwitchDisabled.vue'
+import SwitchNormal from './SwitchModules/SwitchNormal.vue'
+import SwitchDisabled from './SwitchModules/SwitchDisabled.vue'
 export default {
     components: { Demo },
     setup() {
