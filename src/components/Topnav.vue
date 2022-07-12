@@ -49,7 +49,7 @@ $color: #ad6bb5;
     width: 100%;
     display: flex;
     padding: 16px;
-    z-index: 20;
+    z-index: 100;
     justify-content: center;
     align-items: center;
 

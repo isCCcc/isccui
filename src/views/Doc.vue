@@ -78,6 +78,7 @@ export default {
     display: flex;
 
     >aside {
+        z-index: 100;
         flex-shrink: 0; //宽度变化时不收缩
     }
 
