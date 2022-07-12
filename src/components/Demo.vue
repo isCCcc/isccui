@@ -25,7 +25,6 @@ export default {
         component: { type: Object }
     },
     setup(props) {
-        console.log(props.component.__parsed)
         const codeVisible = ref(false)
         const toggle = () => { codeVisible.value = !codeVisible.value }
         const html = computed(() => { return Prism.highlight(props.component.__sourceCode, Prism.languages.html, 'html') })

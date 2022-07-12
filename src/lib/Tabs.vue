@@ -1,8 +1,11 @@
 <template>
     <div class="blanche-tabs">
         <div class="blanche-tabs-nav" ref="container">
-            <div class="blanche-tabs-nav-item" :class="{ selected: t === selected }" v-for="(t, index) in titles"
-                :key="index" :ref="el => { if (t === selected) selectedItem = el }" @click="select(t)">{{ t }}</div>
+            <div class="blanche-tabs-nav-item" :class="{ selected: c.title === selected, disabled: c.disabled === '' }"
+                v-for="(c, index) in CNodes" :key="index" :ref="el => { if (c.title === selected) selectedItem = el }"
+                @click="select(c)">{{
+                        c.title
+                }}</div>
             <div class="blanche-tabs-nav-indicator" ref="indicator"></div>
         </div>
         <div class="blanche-tabs-content">
@@ -37,8 +40,8 @@ export default {
                 throw new Error("Tabs 的子标签必须是 Tab");
             }
         });
-        const titles = defaults.map((tag) => {
-            return tag.props.title;
+        const CNodes = defaults.map((tag) => {
+            return tag.props;
         });
         // 返回的是defaults的一个子元素，即tab标签
         const current = computed(() => {
@@ -46,11 +49,13 @@ export default {
                 return tag.props.title === props.selected;
             })[0];
         })
-        const select = (title: String) => {
-            context.emit('update:selected', title);
+        // 处理点击事件，当有disabled属性时不更新选中结点，否则选中点击结点
+        const select = (CNode) => {
+            if (CNode.disabled === "") { return; }
+            context.emit('update:selected', CNode.title);
         }
         return {
-            defaults, titles, current, select, selectedItem, indicator, container,
+            defaults, CNodes, current, select, selectedItem, indicator, container,
         };
     },
 }

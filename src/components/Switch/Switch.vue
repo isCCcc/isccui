@@ -21,7 +21,6 @@ import SwitchDisabled from './SwitchModules/SwitchDisabled.vue'
 export default {
     components: { Demo },
     setup() {
-
         return { SwitchNormal, SwitchDisabled }
     }
 }

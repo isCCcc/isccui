@@ -4,7 +4,7 @@ import Doc from './views/Doc.vue'
 import Switch from './components/Switch/Switch.vue'
 import Button from './components/Button/Button.vue'
 import Dialog from './components/Dialog/Dialog.vue'
-import Tabs from './components/Tabs.vue'
+import Tabs from './components/Tabs/Tabs.vue'
 
 import { h } from 'vue'
 

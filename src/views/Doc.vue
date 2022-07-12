@@ -27,7 +27,7 @@
                         <router-link to="/doc/dialog">Dialog 对话框</router-link>
                     </li>
                     <li>
-                        <router-link to="/doc/tabs">Tab 标签</router-link>
+                        <router-link to="/doc/tabs">Tabs 标签</router-link>
                     </li>
                 </ol>
             </aside>
