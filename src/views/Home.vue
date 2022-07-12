@@ -4,7 +4,7 @@
             <Topnav />
             <div class="banner">
                 <h1>Blanche-UI</h1>
-                <h2>一个厉害的 UI 框架</h2>
+                <h2 style="margin: 5px;">一套基于 Vue3.0 的桌面端组件库</h2>
                 <p class="actions">
                     <a href="https://github.com/isCCcc">GitHub</a>
                     <router-link to="/doc">开始</router-link>
@@ -47,25 +47,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$green: #02bcb0;
+$btn: #ad6bb5;
 $border-radius: 4px;
-$color: #007974;
+$color: #1b1b1b;
 
 .topnavAndBanner {
-    // background: linear-gradient(145deg,
-    //         #e8cbc0,
-    //         #636fa4);
-    // background: #e8cbc0;
-    /* fallback for old browsers */
-    // background: -webkit-linear-gradient(145deg,
-    //         #e8cbc0,
-    //         #636fa4);
-    /* Chrome 10-25, Safari 5.1-6 */
-    // background: linear-gradient(145deg,
-    //         #e8cbc0,
-    //         #636fa4);
-    background: linear-gradient(145deg,
-            rgba(227, 255, 255, 1) 0%, rgba(183, 233, 230, 1) 100%);
+    background: linear-gradient(45deg,
+            rgba(227, 239, 255, 0.9) 0%, rgb(243, 231, 233, 0.8) 100%);
     clip-path: ellipse(80% 60% at 50% 40%);
 }
 
@@ -135,7 +123,6 @@ $color: #007974;
     align-items: center;
     flex-direction: column;
     color: $color;
-    // background-color: lightgreen;
 
     >.actions {
         padding: 8px 0;
@@ -143,7 +130,7 @@ $color: #007974;
         a {
             margin: 0 8px;
             color: #fff;
-            background-color: $green;
+            background-color: $btn;
             display: inline-block;
             border-radius: $border-radius;
             padding: 8px 24px;

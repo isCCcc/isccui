@@ -49,7 +49,9 @@ h3 {
     color: #1f2f3d;
 }
 
-
+h3 {
+    padding: 20px 0 5px 0;
+}
 
 p {
     font-size: 14px;

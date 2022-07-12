@@ -39,7 +39,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$color: #007974;
+$color: #ad6bb5;
 
 .topnav {
     color: $color;
@@ -74,11 +74,9 @@ $color: #007974;
 
             >a {
                 text-decoration: none;
-                color: $color;
 
                 &:hover {
                     border-bottom: none;
-                    font-weight: bolder;
                 }
             }
         }
@@ -88,7 +86,6 @@ $color: #007974;
         display: none;
         width: 24px;
         height: 24px;
-        // background: red;
         position: absolute;
         left: 16px;
         top: 50%;

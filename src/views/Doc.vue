@@ -56,6 +56,7 @@ export default {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    padding-left: 10px;
 
     >.nav {
         flex-shrink: 0; //高度变化时不收缩
@@ -88,8 +89,8 @@ export default {
 }
 
 aside {
-    // background: #02bcb0;
-    background: linear-gradient(145deg, #dcfcfb, #bbebe8);
+    background: rgb(245, 245, 245);
+    box-shadow: 10px 0 5px rgba(#333, 0.1);
     width: 150px;
     padding: 16px 0;
     position: fixed;

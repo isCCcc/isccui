@@ -46,6 +46,7 @@ export default {
             context.emit('update:visible', !props.visible);
         }
         const onClickOverlay = () => {
+            console.log(props.closeOnClickOverlay)
             if (props.closeOnClickOverlay) { close(); }
         }
         const ok = () => {
