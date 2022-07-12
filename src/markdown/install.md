@@ -12,8 +12,6 @@ npm install blanche-ui
 yarn add blanche-ui
 ```
 
-<!-- 上一节：[介绍](#/doc/intro)
-下一节：[开始使用](#/doc/get-started) -->
 <div style='display:flex;justify-content:space-between;margin:20px 0;float:left '>
 <div>上一节:  <a href='#/doc/intro'>介绍</a></div>  
 </div>

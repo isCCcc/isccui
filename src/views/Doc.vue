@@ -52,6 +52,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$lightbgc: #fff9f9;
+$deepbgc: #c67085;
+$text: #6f2e6a;
+
 .layout {
     display: flex;
     flex-direction: column;
@@ -76,23 +80,32 @@ export default {
 
 .content {
     display: flex;
+    padding-top: 60px;
+    padding-left: 285px;
 
-    >aside {
-        z-index: 100;
-        flex-shrink: 0; //宽度变化时不收缩
+    main {
+        height: 100vh;
+        overflow: auto;
+        flex-grow: 1;
+        padding: 60px;
     }
 
-    >main {
-        flex-grow: 1; //宽度变化时占据剩余空间
-        padding: 16px;
-        background-color: rgb(255, 255, 255);
+    @media (max-width: 500px) {
+        padding-left: 0;
+
+        main {
+            height: 80vh;
+            overflow: auto;
+            flex-grow: 1; //高度变化时,占据剩余空间
+            padding: 32px;
+        }
     }
 }
 
 aside {
     background: rgb(245, 245, 245);
     box-shadow: 10px 0 5px rgba(#333, 0.1);
-    width: 150px;
+    width: 200px;
     padding: 16px 0;
     position: fixed;
     top: 0;
@@ -101,27 +114,62 @@ aside {
     height: 100%;
 
     >h2 {
-        margin-bottom: 4px;
+        margin: 4px 8px;
         padding-left: 8px;
     }
 
     >ol {
         >li {
             >a {
-                padding: 4px 16px;
+                padding: 1px 40px;
                 display: block;
+                position: relative;
+                height: 40px;
+                color: $text;
+                text-decoration: none;
+
+                &:hover {
+                    background: $lightbgc;
+                    border-bottom: none;
+                }
             }
 
             .router-link-active {
                 background-color: #fff;
-                // text-decoration: underline;
-            }
+                border-right: 3px solid $deepbgc;
 
+                @media (min-width: 500px) {
+                    border-right: none;
+
+                    &::after {
+                        content: "";
+                        display: block;
+                        animation: bdrolate 0.8s;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        width: 3px;
+                        height: 40px;
+                        background-color: $deepbgc;
+                    }
+                }
+            }
+        }
+    }
+
+    @keyframes bdrolate {
+        0% {
+            transform: rotateX(90deg);
+        }
+
+        100% {
+            transform: rotateX(0deg);
         }
     }
 }
 
 main {
+    padding-left: 10px;
     overflow: auto;
 }
 </style>
