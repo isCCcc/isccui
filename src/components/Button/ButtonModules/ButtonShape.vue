@@ -1,8 +1,8 @@
 <demo>Button-Shape</demo>
 
 <template>
-        <Button>普通按钮</Button>
-        <Button round>圆边按钮</Button>
+    <Button>普通按钮</Button>
+    <Button round>圆边按钮</Button>
 </template>
 
 <script lang="ts">
