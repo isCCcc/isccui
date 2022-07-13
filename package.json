@@ -1,6 +1,6 @@
 {
-  "name": "cc-ui-1",
-  "version": "0.0.0",
+  "name": "blanche-ui",
+  "version": "0.0.1",
   "files": [
     "dist/lib/*"
   ],
