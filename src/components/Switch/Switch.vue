@@ -26,24 +26,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-h1,
-h3 {
-    padding-bottom: 10px 0;
-    color: #1f2f3d;
-}
-
-
-
-p {
-    font-size: 14px;
-    color: #5e6d82;
-}
-
-.fontSty {
-    font-style: italic;
-    font-weight: bold;
-    color: #333;
-}
-</style>
 

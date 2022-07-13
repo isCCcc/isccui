@@ -22,5 +22,5 @@ blancheUI 是一个简洁的前端 UI 框架,基于 vue3.0 的开源 UI 组件�
 
 <br>
 <div style='display:flex;justify-content:space-between;margin:20px 0 '>
-<div>下一节: <a href='#/doc/install'>安装</a></div>  
+<div><a href='#/doc/install'>安装&gt;</a> </div>  
 </div>

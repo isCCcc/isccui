@@ -87,7 +87,7 @@ $text: #6f2e6a;
         height: 100vh;
         overflow: auto;
         flex-grow: 1;
-        padding: 60px;
+        padding: 50px 0 0 80px;
     }
 
     @media (max-width: 500px) {
@@ -166,10 +166,5 @@ aside {
             transform: rotateX(0deg);
         }
     }
-}
-
-main {
-    padding-left: 10px;
-    overflow: auto;
 }
 </style>

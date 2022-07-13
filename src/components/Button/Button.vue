@@ -21,7 +21,7 @@
         <Demo :component="ButtonDisabled" />
 
         <h3>加载状态</h3>
-        <p>向 Button 组件添加 <span class="fontSty">disabled</span> 属性，以此来定义 Button 的样式。</p>
+        <p>向 Button 组件添加 <span class="fontSty">loading</span> 属性，以此来定义 Button 的样式。</p>
         <Demo :component="ButtonLoading" />
     </div>
 
@@ -42,26 +42,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-h1,
-h3 {
-    padding-bottom: 10px 0;
-    color: #1f2f3d;
-}
-
-h3 {
-    padding: 20px 0 5px 0;
-}
-
-p {
-    font-size: 14px;
-    color: #5e6d82;
-}
-
-.fontSty {
-    font-style: italic;
-    font-weight: bold;
-    color: #333;
-}
-</style>
 
