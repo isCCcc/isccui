@@ -6,7 +6,6 @@
                 <h1>Blanche-UI</h1>
                 <h2 style="margin: 5px;">一套基于 Vue3.0 的桌面端组件库</h2>
                 <p class="actions">
-                    <a href="">Gitee</a>
                     <a href="https://github.com/isCCcc">GitHub</a>
                     <router-link to="/doc">开始</router-link>
                 </p>
