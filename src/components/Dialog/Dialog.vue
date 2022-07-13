@@ -1,24 +1,25 @@
 <template>
-    <h1>Dialog 对话框</h1>
-    <p>在保留当前页面状态的情况下，告知用户并承载相关操作。</p>
-    <br>
+    <div class="first-title">
+        <h1>Dialog 对话框</h1>
+        <p>在保留当前页面状态的情况下，告知用户并承载相关操作。</p>
+        <br>
 
-    <h3>基础用法</h3>
-    <p>Dialog 弹出一个对话框。</p>
-    <Demo :component="DialogBase" />
+        <h3>基础用法</h3>
+        <p>Dialog 弹出一个对话框。</p>
+        <Demo :component="DialogBase" />
 
-    <h3>支持验证对话框内容</h3>
-    <p>Dialog 弹出一个对话框，支持对<span class="fontSty">对话框内容进行逻辑处理</span> ,具体逻辑于ok函数中实现。</p>
-    <Demo :component="DialogVerify" />
+        <h3>支持验证对话框内容</h3>
+        <p>Dialog 弹出一个对话框，支持对<span class="fontSty">对话框内容进行逻辑处理</span> ,具体逻辑于ok函数中实现。</p>
+        <Demo :component="DialogVerify" />
 
-    <h3>支持 closeOnClickOverlay</h3>
-    <p>Dialog 弹出一个对话框，通过为组件添加closeOnClickOverlay属性，来控制<span class="fontSty">点击遮罩层</span> 是否关闭对话框。</p>
-    <Demo :component="DialogOverlay" />
+        <h3>支持 closeOnClickOverlay</h3>
+        <p>Dialog 弹出一个对话框，通过为组件添加closeOnClickOverlay属性，来控制<span class="fontSty">点击遮罩层</span> 是否关闭对话框。</p>
+        <Demo :component="DialogOverlay" />
 
-    <h3>一键开启 Dialog</h3>
-    <p>Dialog 弹出一个对话框，引用<span class="fontSty">ts模块</span> ：openDialog，创建Dialog组件 </p>
-    <Demo :component="DialogByTs" />
-
+        <h3>一键开启 Dialog</h3>
+        <p>Dialog 弹出一个对话框，引用<span class="fontSty">ts模块</span> ：openDialog，创建Dialog组件 </p>
+        <Demo :component="DialogByTs" />
+    </div>
 </template>
 
 <script lang="ts">

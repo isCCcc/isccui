@@ -112,6 +112,7 @@ aside {
     left: 0;
     padding-top: 75px;
     height: 100%;
+    z-index: 90;
 
     >h2 {
         margin: 4px 8px;

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="first-title">
         <h1>Switch 开关</h1>
         <p>表示两种相互对立的状态间的切换，多用于触发「开/关」</p>
         <br>
@@ -25,5 +25,6 @@ export default {
     }
 }
 </script>
+
 
 

@@ -8,7 +8,7 @@
             <Button @click="toggle">{{ codeVisible ? '隐藏代码' : '查看代码' }}</Button>
         </div>
         <div :class="'demo-code ' + [codeVisible ? 'code-show' : 'code-hidden']">
-            <pre v-html="html"></pre>
+            <pre class="language-html" v-html="html"></pre>
         </div>
     </div>
 </template>
