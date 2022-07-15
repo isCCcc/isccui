@@ -1,59 +1,39 @@
 ## 下载与使用
 
-## 引入 `blanche-ui`
-
-#### 完整引入
-
-```
-    import 'blanche-ui/dist/lib/blanche.css'
-    import { createApp } from 'vue'
-    import App from './App.vue'
-    import { blancheUI } from 'blanche-ui'
-
-    createApp(App)
-      .use(blancheUI)
-      .mount('#app')
-```
-
-> 以上代码便完成了 blanche-ui 的引入。需要注意的是，样式文件需要单独引入。
-
+请先[安装](#/doc/install)本组件库。
 <br>
-
-#### 按需引入
-
-> 如果你只希望引入部分组件，比如 Button ，那么需要在 main.ts 中写入以下内容：
-
-```
-    import 'blanche-ui/dist/lib/blanche.css'
-    import { createApp } from 'vue'
-    import { Button } from 'blanche-ui'
-    import App from './App.vue'
-
-    createApp(App).use(Button).mount('#app')
-```
-
 <br>
-
-> 完整组件列表和引入方式
+然后在你的代码中写入下面的代码
+<br>
+```
+import {Button, Tabs, Switch, Dialog} from "blanche-ui"
+```
+就可以使用我提供的组件了。
+<br>
+<br>
+## Vue 单文件组件
+代码示例：
 
 ```
-    import App from './App.vue'
-    import { createApp } from 'vue'
-    import {
-        Button,
-        Switch,
-        Dialog,
-        Tabs,
-        Tab,
-        openDialog
-    } from 'blanche-ui'
+<template>
+  <Tabs v-model:selected="tabSelected">
+    <Tab title="tab1">content-one</Tab>
+    <Tab title="tab2">content-two</Tab>
+    <Tab title="tab3">content-three</Tab>
+  </Tabs>
+</template>
 
-    createApp(App)
-        .component('Button',Button)
-        .component('Switch',Switch)
-        .component('Dialog',Dialog)
-        .component('Tabs',Tabs)
-        .component('Tab',Tab)
+<script>
+import { Tabs, Tab } from 'blanche-ui';
+import 'blanche-ui/dist/lib/blanche.css'
+export default {
+  name: 'App',
+  components: { Tabs, Tab },
+  data() {
+    return { tabSelected: 'tab2' }
+  }
+}
+</script>
 ```
 
 <div style='display:flex;justify-content:space-between;margin:20px 0;float:left '>
