@@ -44,6 +44,8 @@
         Switch,
         Dialog,
         Tabs,
+        Tab,
+        openDialog
     } from 'blanche-ui'
 
     createApp(App)
@@ -51,6 +53,7 @@
         .component('Switch',Switch)
         .component('Dialog',Dialog)
         .component('Tabs',Tabs)
+        .component('Tab',Tab)
 ```
 
 <div style='display:flex;justify-content:space-between;margin:20px 0;float:left '>

@@ -11,7 +11,7 @@
         <Demo :component="TabNormal" />
 
         <h3> 支持 Disabled</h3>
-        <p>在 Tab 组件中添加 <span class="fontSty">disabled</span> 属性，以此来控制 <span class="fontSty">该 Tab 不被选中 </span></p>
+        <p>在 Tab 组件中添加 <span class="fontSty"> disabled </span> 属性，以此来控制 <span class="fontSty"> 该 Tab 不被选中 </span></p>
         <Demo :component="TabDisabled" />
     </div>
 </template>
