@@ -2,12 +2,12 @@
   <div class="blanche-date">
     <div class="blanche-date-toggle">
       <div class="blanche-date-toggle-left">
-        <span class="blanche-date-toggle-left-pre-year">
+        <span class="blanche-date-toggle-left-pre-year year">
           <svg>
             <use xlink:href="#icon-pre-year"></use>
           </svg>
         </span>
-        <span class="blanche-date-toggle-left-pre-month">
+        <span class="blanche-date-toggle-left-pre-month ">
           <svg>
             <use xlink:href="#icon-pre-month"></use>
           </svg>
